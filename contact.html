@@ -17,6 +17,48 @@
     </header>
 
     <main>
+         
+        <section>
+            <h2>Get in Touch</h2>
+            <p>Have questions about plant care, custom orders, or delivery? Send us a message!</p>
+
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Your details</legend>
+
+                    <p>
+                        <label for="shop-name">Name:</label><br>
+                        <input type="text" id="shop-name" name="name" required>
+                    </p>
+
+                    <p>
+                        <label for="shop-email">Email:</label><br>
+                        <input type="email" id="shop-email" name="email" required>
+                    </p>
+
+                    <p>
+                        <label for="shop-subject">Subject:</label><br>
+                        <select id="shop-subject" name="subject" required>
+                            <option value="">-- Please select an option --</option>
+                            <option value="plant-care">Plant Care Advice</option>
+                            <option value="order-inquiry">Order Inquiry</option>
+                            <option value="stock-request">Request a Specific Plant</option>
+                            <option value="general">General Question</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="shop-message">Message:</label><br>
+                        <textarea id="shop-message" name="message" rows="5" required></textarea>
+                    </p>
+
+                    <p>
+                        <button type="submit">Send message</button>
+                    </p>
+                </fieldset>
+            </form>
+        </section>   
+
         <section>
             <h2>Contact Us</h2>
             <p>Reach out to us through any of the following channels:</p>
