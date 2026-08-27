@@ -20,20 +20,15 @@
     </header>
 
     <main>
-        <!-- 1. Product Name -->
         <h1>Chinese Money Plant</h1>
-
-        <!-- 2. Larger Product Image -->
         <img src="https://ph.pinterest.com/pin/591871576074411072/" alt="Potted Chinese Money Plant with round coin-like leaves">
 
-        <!-- 3. Full Description -->
         <section>
             <h2>Product Description</h2>
             <p>The Chinese Money Plant (Pilea peperomioides) is a striking indoor favorite famous for its vibrant, round, coin-shaped leaves. Often associated with good fortune and prosperity, it creates a unique focal point in any living space.</p>
             <p>It grows rapidly during warmer seasons and produces small 'offshoots' or plant babies around its base, which can easily be repotted and shared with friends and family.</p>
         </section>
 
-        <!-- 4. Specifications Table -->
         <section>
             <h2>Product Specifications</h2>
             <table>
@@ -64,6 +59,57 @@
             </table>
         </section>
     </main>
+
+    <section>
+    <h2>Order Enquiry</h2>
+    <form action="#" method="post">
+
+        <p>
+            <label for="quantity">Quantity:</label><br>
+            <input type="number" id="quantity" name="quantity" min="1" max="20" value="1" required>
+        </p>
+
+        <fieldset>
+            <legend>Preferred Delivery Method</legend>
+            
+            <input type="radio" id="standard" name="delivery" value="standard" checked>
+            <label for="standard">Standard Shipping</label><br>
+
+            <input type="radio" id="express" name="delivery" value="express">
+            <label for="express">Express Delivery</label><br>
+
+            <input type="radio" id="pickup" name="delivery" value="pickup">
+            <label for="pickup">Store Pickup</label>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Optional Extras</legend>
+
+            <input type="checkbox" id="gift-wrap" name="extras" value="gift-wrap">
+            <label for="gift-wrap">Gift Wrapping (₱50)</label><br>
+
+            <input type="checkbox" id="plant-food" name="extras" value="plant-food">
+            <label for="plant-food">Include Plant Food Sample (₱30)</label><br>
+
+            <input type="checkbox" id="care-guide" name="extras" value="care-guide">
+            <label for="care-guide">Printed Care Guide Booklet</label>
+        </fieldset>
+
+        <br>
+
+        <p>
+            <label for="enquiry-email">Your Email Address:</label><br>
+            <input type="email" id="enquiry-email" name="email" required>
+        </p>
+
+        <p>
+            <button type="submit">Submit Enquiry</button>
+        </p>
+
+    </form>
+</section>
 
     <footer>
         <p>Created by Patrick Ballos - 2026</p>
