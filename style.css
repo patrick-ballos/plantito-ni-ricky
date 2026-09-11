@@ -1,10 +1,10 @@
 :root {
-  --brand: #2A7C13;       
-  --dark-ink: #2A7C13;    
-  --muted-grey: #FFF8CF; 
-  --light-bg: #76C457;    
-  --card-bg: #76C457;     
-  --border-color: #FBE6C2;
+  --light-bg: #276F27;
+  --dark-ink: #8ECA3C; 
+  --card-bg: #499A13;     
+  --brand: #BBDC12;
+  --muted-grey: #8ECA3C;
+  --border-color: #BBDC12;
 }
 
 * {
@@ -20,42 +20,30 @@ body {
   padding: 0;
 }
 
-header {
+.site-header, header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--card-bg);
   border-bottom: 2px solid var(--border-color);
-  padding: 1.5rem;
-  text-align: center;
+  padding: 1.5rem 2rem;
 }
 
 header h1 {
   color: var(--brand);
-  margin: 0 0 0.5rem 0;
+  margin: 0;
 }
 
-main {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  color: var(--muted-grey);
-  border-top: 1px solid var(--border-color);
-  margin-top: 3rem;
-}
-
-/* Navigation Bar */
 nav ul {
+  display: flex;
+  gap: 20px; 
   list-style: none;
   padding: 0;
-  margin: 1rem 0 0 0;
+  margin: 0;
 }
 
 nav li {
-  display: inline-block;
-  margin: 0 0.75rem;
+ margin: 0;
 }
 
 nav a {
@@ -68,12 +56,41 @@ nav a:hover {
   text-decoration: underline;
 }
 
+.hero-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 180px; 
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero-banner h2 {
+  margin: 0 0 0.5rem 0;
+  color: var(--brand);
+}
+
+.hero-banner p {
+  margin: 0;
+  color: var(--muted-grey);
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
 .product-card {
+  flex: 1 1 240px; 
   background-color: var(--card-bg);
   border-radius: 8px;
-  padding: 1.25rem; /* At least 16px (20px) */
+  padding: 1.25rem;
   border-left: 6px solid var(--brand);
-  margin-bottom: 1.5rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
@@ -89,52 +106,16 @@ nav a:hover {
   border-radius: 4px;
 }
 
-fieldset {
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  padding: 1.25rem;
-  margin-bottom: 1.5rem;
-  background-color: var(--card-bg);
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-legend {
-  font-weight: bold;
-  color: var(--brand);
-  padding: 0 0.5rem;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="number"],
-select,
-textarea {
-  width: 100%;
-  padding: 0.6rem;
-  border: 1px solid var(--muted-grey);
-  border-radius: 4px;
-  font-size: 1rem;
-  margin-top: 0.25rem;
-}
-
-button[type="submit"] {
-  background-color: var(--brand);
-  color: #ffffff;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button[type="submit"]:hover {
-  opacity: 0.9;
-}
-
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-  outline: 3px solid var(--brand);
-  outline-offset: 2px;
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--muted-grey);
+  border-top: 1px solid var(--border-color);
+  margin-top: 3rem;
 }
