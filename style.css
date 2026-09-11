@@ -119,3 +119,30 @@ footer {
   border-top: 1px solid var(--border-color);
   margin-top: 3rem;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background-color: var(--card-bg); 
+  color: #ffffff;                  
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border: 1px solid var(--brand); 
+}
+
+th {
+  background-color: var(--light-bg); 
+  color: var(--brand);              
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.1); 
+}
