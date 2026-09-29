@@ -46,7 +46,17 @@ footer { grid-area: foot; }
       "side     main"
       "foot     foot";
   }
+
+  @media (min-width: 700px) {
+  .page {
+    grid-template-columns: 220px 1fr;
+    grid-template-areas:
+      "masthead masthead"
+      "side     main"
+      "foot     foot";
+  }
 }
+
 
 .site-header {
   display: flex;
@@ -157,4 +167,23 @@ input[type="text"],
 select,
 textarea {
   max-width: 400px;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
