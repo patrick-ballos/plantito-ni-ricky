@@ -1,9 +1,11 @@
+/* ==========================================================================
+   1. VARIABLES & PALETTE
+   ========================================================================== */
 :root {
-  --light-bg: #276F27;
-  --dark-ink: #8ECA3C; 
-  --card-bg: #499A13;     
-  --brand: #BBDC12;
-  --muted-grey: #8ECA3C;
+  --light-bg: #276F27;     /* Background color */
+  --dark-ink: #8ECA3C;     /* Main text color */
+  --card-bg: #499A13;      /* Card background color */
+  --brand: #BBDC12;        /* Accent color */
   --border-color: #BBDC12;
 }
 
@@ -14,145 +16,156 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  color: var(--dark-ink);
   background-color: var(--light-bg);
+  color: var(--dark-ink);
   margin: 0;
   padding: 0;
 }
 
-.site-header, header {
+/* ==========================================================================
+   2. GRID AREA ASSIGNMENTS
+   ========================================================================== */
+header { grid-area: masthead; }
+aside  { grid-area: side; }
+main   { grid-area: main; }
+footer { grid-area: foot; }
+
+/* ==========================================================================
+   3. MOBILE-FIRST PAGE SKELETON (SINGLE COLUMN)
+   ========================================================================== */
+.page {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "masthead"
+    "main"
+    "side"
+    "foot";
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ==========================================================================
+   4. TABLET & DESKTOP ENHANCEMENT (MIN-WIDTH: 700PX)
+   ========================================================================== */
+@media (min-width: 700px) {
+  .page {
+    grid-template-columns: 220px 1fr;
+    grid-template-areas:
+      "masthead masthead"
+      "side     main"
+      "foot     foot";
+  }
+}
+
+/* ==========================================================================
+   5. INNER FLEXBOX COMPONENTS & SIDEBAR STYLING
+   ========================================================================== */
+/* Header Flexbox */
+.site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--card-bg);
-  border-bottom: 2px solid var(--border-color);
-  padding: 1.5rem 2rem;
+  background-color: #1c521c;
+  border-bottom: 2px solid var(--brand);
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
 }
 
-header h1 {
-  color: var(--brand);
+.site-header h1 {
+  color: #ffffff;
   margin: 0;
 }
 
 nav ul {
   display: flex;
-  gap: 20px; 
+  gap: 20px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-nav li {
- margin: 0;
-}
-
 nav a {
-  text-decoration: none;
   color: var(--brand);
+  text-decoration: none;
   font-weight: bold;
 }
 
-nav a:hover {
-  text-decoration: underline;
+/* Sidebar styling */
+.site-sidebar {
+  background-color: #1c521c;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--brand);
+  color: #ffffff;
 }
 
+.site-sidebar h3 {
+  color: var(--brand);
+  margin-top: 0;
+}
+
+.site-sidebar ul {
+  padding-left: 1.2rem;
+}
+
+/* Hero Banner */
 .hero-banner {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 180px; 
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  height: 160px;
+  background-color: #1c521c;
+  border: 1px solid var(--brand);
+  border-radius: 6px;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-banner h2 {
+  color: #ffffff;
   margin: 0 0 0.5rem 0;
-  color: var(--brand);
 }
 
-.hero-banner p {
-  margin: 0;
-  color: var(--muted-grey);
-}
-
+/* Product Cards Grid */
 .product-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 20px;
 }
 
 .product-card {
-  flex: 1 1 240px; 
+  flex: 1 1 240px;
   background-color: var(--card-bg);
-  border-radius: 8px;
-  padding: 1.25rem;
+  color: #ffffff;
   border-left: 6px solid var(--brand);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  padding: 1rem;
 }
 
 .product-card h3 {
-  font-size: 1.35rem;
-  color: var(--brand);
+  color: #ffffff;
   margin-top: 0;
 }
 
 .product-card img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
   border-radius: 4px;
 }
 
-main img {
-  width: 100%;
-  max-width: 600px;      
-  height: 350px;        
-  object-fit: cover;
-  border-radius: 6px;
-  display: block;
-  margin: 1rem 0;
-}
-
-main {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+.product-card a {
+  color: var(--brand);
+  font-weight: bold;
 }
 
 footer {
   text-align: center;
-  padding: 1.5rem;
-  color: var(--muted-grey);
-  border-top: 1px solid var(--border-color);
-  margin-top: 3rem;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-  background-color: var(--card-bg); 
-  color: #ffffff;                  
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-th, td {
-  padding: 0.75rem 1rem;
-  text-align: left;
-  border: 1px solid var(--brand); 
-}
-
-th {
-  background-color: var(--light-bg); 
-  color: var(--brand);              
-  font-weight: bold;
-}
-
-tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.1); 
+  padding: 1rem;
+  color: var(--dark-ink);
+  border-top: 1px solid var(--brand);
 }
