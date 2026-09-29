@@ -1,11 +1,8 @@
-/* ==========================================================================
-   1. VARIABLES & PALETTE
-   ========================================================================== */
 :root {
-  --light-bg: #276F27;     /* Background color */
-  --dark-ink: #8ECA3C;     /* Main text color */
-  --card-bg: #499A13;      /* Card background color */
-  --brand: #BBDC12;        /* Accent color */
+  --light-bg: #276F27;     
+  --dark-ink: #8ECA3C;     
+  --card-bg: #499A13;      
+  --brand: #BBDC12;        
   --border-color: #BBDC12;
 }
 
@@ -22,17 +19,12 @@ body {
   padding: 0;
 }
 
-/* ==========================================================================
-   2. GRID AREA ASSIGNMENTS
-   ========================================================================== */
 header { grid-area: masthead; }
 aside  { grid-area: side; }
 main   { grid-area: main; }
 footer { grid-area: foot; }
 
-/* ==========================================================================
-   3. MOBILE-FIRST PAGE SKELETON (SINGLE COLUMN)
-   ========================================================================== */
+
 .page {
   display: grid;
   grid-template-columns: 1fr;
@@ -47,10 +39,6 @@ footer { grid-area: foot; }
   padding: 1rem;
 }
 
-/* ==========================================================================
-   4. TABLET & DESKTOP ENHANCEMENT (MIN-WIDTH: 700PX)
-   ========================================================================== */
-@media (min-width: 700px) {
   .page {
     grid-template-columns: 220px 1fr;
     grid-template-areas:
@@ -60,10 +48,6 @@ footer { grid-area: foot; }
   }
 }
 
-/* ==========================================================================
-   5. INNER FLEXBOX COMPONENTS & SIDEBAR STYLING
-   ========================================================================== */
-/* Header Flexbox */
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -93,7 +77,6 @@ nav a {
   font-weight: bold;
 }
 
-/* Sidebar styling */
 .site-sidebar {
   background-color: #1c521c;
   padding: 1rem;
@@ -111,7 +94,6 @@ nav a {
   padding-left: 1.2rem;
 }
 
-/* Hero Banner */
 .hero-banner {
   display: flex;
   flex-direction: column;
@@ -130,7 +112,6 @@ nav a {
   margin: 0 0 0.5rem 0;
 }
 
-/* Product Cards Grid */
 .product-grid {
   display: flex;
   flex-wrap: wrap;
@@ -168,4 +149,12 @@ footer {
   padding: 1rem;
   color: var(--dark-ink);
   border-top: 1px solid var(--brand);
+}
+
+input[type="number"],
+input[type="email"],
+input[type="text"],
+select,
+textarea {
+  max-width: 400px;
 }
